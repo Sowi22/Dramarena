@@ -14,7 +14,7 @@ for (const f of ["config.js", "i18n.js", "content.js"]) vm.runInContext(fs.readF
 const CFG = ctx.window.SITE_CONFIG, I18N = ctx.window.I18N, C = ctx.window.CONTENT;
 
 /* ==== EDITAR AQUÍ ==== */
-const SITE = "https://dra-marena-linero.vercel.app";   // dominio final (sin / al final)
+const SITE = "https://dramarena.vercel.app";   // dominio final (sin / al final)
 const WA = CFG.whatsapp;
 const UPDATED = "2026-11-09";
 const GEO = { lat: 10.9878, lng: -74.7889 };            // Barranquilla (aprox.). Cambiar por el consultorio exacto.

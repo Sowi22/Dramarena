@@ -19,4 +19,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://dra-marena-linero.vercel.app/sitemap.xml
+Sitemap: https://dramarena.vercel.app/sitemap.xml
