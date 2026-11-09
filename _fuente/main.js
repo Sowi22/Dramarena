@@ -12,7 +12,7 @@
   });
 
   /* ---- Header, progreso de lectura ---- */
-  const header = $(".header"), progress = $(".progress"), top = $(".hero, .phero");
+  const header = $(".header"), progress = $(".progress"), top = $(".hero, .phero, .vhero");
   let lastY = 0, ticking = false;
   const onScroll = () => {
     const y = scrollY, max = root.scrollHeight - innerHeight;
@@ -20,9 +20,50 @@
     header.classList.toggle("is-solid", y > (top ? top.offsetHeight - 90 : 40));
     header.classList.toggle("is-hidden", y > 700 && y > lastY + 4 && !root.classList.contains("menu-open"));
     if (y < lastY - 4) header.classList.remove("is-hidden");
-    lastY = y; pin(); ticking = false;
+    motion(y, y - lastY); lastY = y; pin(); ticking = false;
   };
   addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+
+  /* ---- Efectos ligados al scroll: paralaje, hero, marquesina, paneles apilados ---- */
+  const px = $$("[data-parallax]"), heroEl = $(".hero"), vhero = $(".vhero"), marq = $(".marquee"), panels = $$(".panel");
+  let skT;
+  function motion(y, v) {
+    if (reduce) return;
+    const vh = innerHeight;
+    if (heroEl) heroEl.style.setProperty("--hp", Math.min(1, y / vh).toFixed(3));
+    if (vhero) vhero.style.setProperty("--vp", Math.min(1, y / vh).toFixed(3));
+    px.forEach(el => { const r = el.getBoundingClientRect(); if (r.bottom < -50 || r.top > vh + 50) return; el.style.setProperty("--py", (((r.top + r.height / 2) - vh / 2) / vh * -48).toFixed(1) + "px"); });
+    if (marq) { marq.style.setProperty("--sk", Math.max(-14, Math.min(14, v * -.35)).toFixed(1) + "deg"); clearTimeout(skT); skT = setTimeout(() => marq.style.setProperty("--sk", "0deg"), 120); }
+    panels.forEach((p, i) => {
+      const next = panels[i + 1], m = p.firstElementChild; if (!next) return;
+      const k = Math.min(1, Math.max(0, 1 - next.getBoundingClientRect().top / vh));
+      m.style.setProperty("--ps", (1 - k * .14).toFixed(3)); m.style.setProperty("--pb", (1 - k * .65).toFixed(3));
+    });
+  }
+
+  /* ---- Videos: cargan y se reproducen solo cuando están en pantalla ---- */
+  const vio = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target;
+    if (e.isIntersecting) { if (!v.src && v.dataset.src) v.src = v.dataset.src; const p = v.play(); if (p) p.catch(() => {}); }
+    else if (!v.paused) v.pause();
+  }), { rootMargin: "200px 0px" });
+  $$("video[data-src]").forEach(v => { if (reduce) { v.removeAttribute("autoplay"); return; } vio.observe(v); });
+  const pio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); pio.unobserve(e.target); } }), { threshold: .35 });
+  panels.forEach(p => pio.observe(p));
+  if (vhero) requestAnimationFrame(() => vhero.classList.add("in"));
+
+  /* ---- Títulos que se revelan palabra por palabra ---- */
+  if (!reduce) $$(".h2.rv, .vhero h1, .panel h3").forEach(h => {
+    let i = 0;
+    const walk = n => [...n.childNodes].forEach(c => {
+      if (c.nodeType === 3) {
+        const f = d.createDocumentFragment();
+        c.textContent.split(/(\s+)/).forEach(p => { if (!p) return; if (/^\s+$/.test(p)) { f.append(p); return; } const o = d.createElement("span"), s = d.createElement("span"); o.className = "sw"; s.style.setProperty("--i", i++); s.textContent = p; o.append(s); f.append(o); });
+        c.replaceWith(f);
+      } else if (c.nodeType === 1) walk(c);
+    });
+    walk(h); h.classList.add("words");
+  });
 
   /* ---- Menú móvil ---- */
   const burger = $(".burger"), mmenu = $(".mmenu");

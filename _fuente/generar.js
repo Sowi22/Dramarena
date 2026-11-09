@@ -35,7 +35,7 @@ const CAT_HASH = { es: { body: "corporal", breast: "senos", face: "facial", comb
 const X = {
   es: {
     nav: { home: "Inicio", doctora: "La Doctora", tecnica: "Técnica Linero HD", procs: "Procedimientos", turismo: "Turismo médico", resultados: "Resultados", faq: "Preguntas", contacto: "Contacto" },
-    menu: "Menú", allProcs: "Ver todos los procedimientos", featured: "Técnica insignia", most: "Más solicitado", viewProc: "Ver procedimiento", want: "Lo quiero", featH: "Los más <em>solicitados</em>", allH: "Todos los <em>procedimientos</em>",
+    menu: "Menú", allProcs: "Ver todos los procedimientos", featured: "Técnica insignia", bqH: "Barranquilla, <em>la puerta de oro</em>", bqLead: "Tu recuperación sucede en una ciudad cálida, moderna y abierta al río Magdalena. Estos son algunos de los lugares que podrás disfrutar.", credits: "Videos de la Ventana al Mundo y vista aérea: <a href=\"https://www.pexels.com\" target=\"_blank\" rel=\"noopener\">Pexels</a>. Gran Malecón y Aleta del Tiburón: fotos de Jdvillalobos en <a href=\"https://commons.wikimedia.org\" target=\"_blank\" rel=\"noopener\">Wikimedia Commons</a> (CC BY-SA), animadas para este sitio.", most: "Más solicitado", viewProc: "Ver procedimiento", want: "Lo quiero", featH: "Los más <em>solicitados</em>", allH: "Todos los <em>procedimientos</em>",
     igText: "En Instagram compartimos casos de antes y después, testimonios en video y el día a día de la recuperación. Por respeto a la privacidad médica, los casos completos se muestran allí y durante tu valoración.",
     t1: "El arte de", t2: "realzar tu esencia", rot: "confianza|silueta|belleza",
     cta2: "Descubre la Técnica Linero HD", trust: ["Clínicas habilitadas", "Valoración virtual", "Español · English · Português"], comm: "comunidad en Instagram",
@@ -85,7 +85,7 @@ const X = {
   },
   en: {
     nav: { home: "Home", doctora: "The Doctor", tecnica: "Linero HD Technique", procs: "Procedures", turismo: "Medical tourism", resultados: "Results", faq: "FAQ", contacto: "Contact" },
-    menu: "Menu", allProcs: "See all procedures", featured: "Signature technique", most: "Most requested", viewProc: "View procedure", want: "I want this", featH: "Most <em>requested</em>", allH: "All <em>procedures</em>",
+    menu: "Menu", allProcs: "See all procedures", featured: "Signature technique", bqH: "Barranquilla, <em>the golden gate</em>", bqLead: "Your recovery takes place in a warm, modern city that opens onto the Magdalena River. Here are a few places you will enjoy.", credits: "Ventana al Mundo and aerial footage: <a href=\"https://www.pexels.com\" target=\"_blank\" rel=\"noopener\">Pexels</a>. Gran Malecón and Shark Fin: photos by Jdvillalobos on <a href=\"https://commons.wikimedia.org\" target=\"_blank\" rel=\"noopener\">Wikimedia Commons</a> (CC BY-SA), animated for this site.", most: "Most requested", viewProc: "View procedure", want: "I want this", featH: "Most <em>requested</em>", allH: "All <em>procedures</em>",
     igText: "On Instagram we share before-and-after cases, video testimonials and day-to-day recovery stories. Out of respect for medical privacy, full cases are shown there and during your consultation.",
     t1: "The art of", t2: "enhancing your essence", rot: "confidence|silhouette|beauty",
     cta2: "Discover the Linero HD Technique", trust: ["Accredited clinics", "Virtual consultation", "Español · English · Português"], comm: "Instagram community",
@@ -135,7 +135,7 @@ const X = {
   },
   pt: {
     nav: { home: "Início", doctora: "A Doutora", tecnica: "Técnica Linero HD", procs: "Procedimentos", turismo: "Turismo médico", resultados: "Resultados", faq: "Dúvidas", contacto: "Contato" },
-    menu: "Menu", allProcs: "Ver todos os procedimentos", featured: "Técnica assinatura", most: "Mais procurado", viewProc: "Ver procedimento", want: "Eu quero", featH: "Os mais <em>procurados</em>", allH: "Todos os <em>procedimentos</em>",
+    menu: "Menu", allProcs: "Ver todos os procedimentos", featured: "Técnica assinatura", bqH: "Barranquilla, <em>a porta de ouro</em>", bqLead: "Sua recuperação acontece em uma cidade calorosa, moderna e aberta ao rio Magdalena. Estes são alguns dos lugares que você vai aproveitar.", credits: "Vídeos da Ventana al Mundo e vista aérea: <a href=\"https://www.pexels.com\" target=\"_blank\" rel=\"noopener\">Pexels</a>. Gran Malecón e Barbatana do Tubarão: fotos de Jdvillalobos no <a href=\"https://commons.wikimedia.org\" target=\"_blank\" rel=\"noopener\">Wikimedia Commons</a> (CC BY-SA), animadas para este site.", most: "Mais procurado", viewProc: "Ver procedimento", want: "Eu quero", featH: "Os mais <em>procurados</em>", allH: "Todos os <em>procedimentos</em>",
     igText: "No Instagram compartilhamos casos de antes e depois, depoimentos em vídeo e o dia a dia da recuperação. Por respeito à privacidade médica, os casos completos são mostrados lá e durante a sua avaliação.",
     t1: "A arte de", t2: "realçar sua essência", rot: "confiança|silhueta|beleza",
     cta2: "Conheça a Técnica Linero HD", trust: ["Clínicas habilitadas", "Avaliação virtual", "Español · English · Português"], comm: "comunidade no Instagram",
@@ -205,6 +205,7 @@ const I = {
   arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>',
   ne: '<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>',
   down: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>',
+  pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
   ig: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
   inc: [
     '<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/>',
@@ -216,7 +217,14 @@ const I = {
   ]
 };
 const svgI = p => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
-const CSS = fs.readFileSync(path.join(SRC, "styles.css"), "utf8").replace(/\/\*[\s\S]*?\*\//g, "").replace(/\s*\n\s*/g, "").replace(/\s{2,}/g, " ");
+/* Lugares de Barranquilla (video en assets/video/<v>.mp4 + póster .jpg) */
+const PLACES = [
+  { v: "gran-malecon", es: ["Gran Malecón del Río", "Barranquilla · Río Magdalena", "Kilómetros de malecón frente al río Magdalena para caminar al atardecer, con restaurantes, parques y la brisa del Caribe."], en: ["Gran Malecón del Río", "Barranquilla · Magdalena River", "Miles of riverfront promenade along the Magdalena River to stroll at sunset, with restaurants, parks and the Caribbean breeze."], pt: ["Gran Malecón del Río", "Barranquilla · Rio Magdalena", "Quilômetros de calçadão às margens do rio Magdalena para caminhar ao pôr do sol, com restaurantes, parques e a brisa do Caribe."] },
+  { v: "ventana-de-campeones-noche", es: ["Aleta del Tiburón", "Ventana de Campeones · Gran Malecón", "El monumento de vidrio en homenaje al Junior, el equipo de los «Tiburones», que se ilumina cada noche frente al río."], en: ["The Shark Fin", "Ventana de Campeones · Gran Malecón", "A glass monument honoring Junior, the city's beloved \"Sharks\" football club, lit up every night by the river."], pt: ["Barbatana do Tubarão", "Ventana de Campeones · Gran Malecón", "O monumento de vidro em homenagem ao Junior, o time dos «Tubarões», que se ilumina todas as noites diante do rio."] },
+  { v: "ventana-al-mundo", es: ["Ventana al Mundo", "Vía 40 · Barranquilla", "Un monumento de 46 metros cubierto de colores que recibe a quienes llegan a la ciudad."], en: ["Ventana al Mundo", "Vía 40 · Barranquilla", "A colorful 46-meter monument that welcomes everyone arriving in the city."], pt: ["Ventana al Mundo", "Vía 40 · Barranquilla", "Um monumento colorido de 46 metros que recebe quem chega à cidade."] }
+];
+const vid = (A, v, label, eager) => `<video muted loop playsinline ${eager ? "autoplay " : ""}preload="${eager ? "auto" : "none"}" poster="${A}video/${v}.jpg" data-src="${A}video/${v}.mp4" aria-label="${esc(label)}"></video>`;
+const CSS = (fs.readFileSync(path.join(SRC, "styles.css"), "utf8") + fs.readFileSync(path.join(SRC, "styles-motion.css"), "utf8")).replace(/\/\*[\s\S]*?\*\//g, "").replace(/\s*\n\s*/g, "").replace(/\s{2,}/g, " ");
 
 /* ---------- JSON-LD base ---------- */
 function ldBase(L, t) {
@@ -390,7 +398,7 @@ const pcard = (L, t, href, p, i, A) => {
 </article>`;
 };
 const featured = (L, t, href, A) => `<div class="pfeat">${["lipo", "bbl"].map((id, i) => { const p = C.procedures.find(q => q.id === id), u = href(url(L, "procs", pslug(L, p))); return `<article class="pfeat__item rv" style="--d:${i}">
-  <a class="pfeat__media" href="${u}" tabindex="-1" aria-hidden="true"><img src="${A}img/ig/caso-${PHOTO[id]}.jpg" alt="" width="640" height="800" loading="lazy"></a>
+  <a class="pfeat__media" data-parallax href="${u}" tabindex="-1" aria-hidden="true"><img src="${A}img/ig/caso-${PHOTO[id]}.jpg" alt="" width="640" height="800" loading="lazy"></a>
   <div class="pfeat__body"><em class="pc__badge">${esc(i ? t.most : t.featured)}</em><h3><a href="${u}">${esc(p[L][0])}</a></h3><p class="pc__tag">${esc(tagOf(L, p))}</p><p>${esc(p[L][1])}</p>
   <ul class="pc__facts"><li><small>${esc(t.dur)}</small>${esc(p.dur)}</li><li><small>${esc(t.rec)}</small>${esc(p.rec[L])}</li><li><small>${esc(t.stay)}</small>${esc(p.stay[L])}</li></ul>
   <div class="pc__acts"><a class="btn btn--gold btn--sm" href="${u}">${esc(t.viewProc)}</a><a class="pc__want" href="${wa(t["wa.default"] + " — " + p[L][0])}" target="_blank" rel="noopener">${I.wa}${esc(t.want)}</a></div></div>
@@ -451,7 +459,7 @@ for (const L of LANGS) {
 </div></div></div>
 <section class="section">
   <div class="container split">
-    <figure class="frame frame--arch rv"><div class="media media--arch rv-img"><img src="${A}img/ig/doctora.jpg" alt="${esc(t.photoAlt)}" width="720" height="900" loading="lazy"></div></figure>
+    <figure class="frame frame--arch rv"><div data-parallax class="media media--arch rv-img"><img src="${A}img/ig/doctora.jpg" alt="${esc(t.photoAlt)}" width="720" height="900" loading="lazy"></div></figure>
     <div>
       <p class="eyebrow rv">${esc(t["doctor.eyebrow"])}</p>
       <h2 class="h2 rv">${t.docH}</h2>
@@ -463,7 +471,7 @@ for (const L of LANGS) {
 </section>
 <section class="section dark">
   <div class="container split split--rev">
-    <figure class="frame rv"><div class="media rv-img"><img src="${A}img/ig/caso-1.jpg" alt="${esc(t.alt)} 1" width="640" height="800" loading="lazy"></div></figure>
+    <figure class="frame rv"><div data-parallax class="media rv-img"><img src="${A}img/ig/caso-1.jpg" alt="${esc(t.alt)} 1" width="640" height="800" loading="lazy"></div></figure>
     <div>
       <p class="eyebrow rv">${esc(t.featured)}</p>
       <h2 class="h2 rv">${t.techH}</h2>
@@ -480,7 +488,8 @@ for (const L of LANGS) {
     <div class="cats">${C.categories.map((c, i) => `<a class="cat rv" style="--d:${i}" href="${href(url(L, "procs"))}#${CAT_HASH[L][c.id]}"><b>0${i + 1}</b><svg class="cat__art" viewBox="0 0 100 100" aria-hidden="true">${ART[c.id]}</svg><h3>${esc(c[L])}</h3>${I.ne}<ul>${C.procedures.filter(p => p.cat === c.id).map(p => `<li>${esc(p[L][0])}</li>`).join("")}</ul></a>`).join("")}</div>
   </div>
 </section>
-<section class="section dark">
+<section class="section vband dark" data-parallax>
+  <div class="vband__media">${vid(A, "ventana-de-campeones-noche", PLACES[1][L][0])}</div>
   <div class="container split split--top">
     <div>
       <p class="eyebrow rv">${esc(t["tour.eyebrow"])}</p>
@@ -512,7 +521,7 @@ ${ctaBand(t, wa0, href, L)}` , ld: [faqLd(L, allFaqs(L).slice(0, 5))] });
 ${phero(t, href, { crumbs: cr, eyebrow: t["doctor.eyebrow"], h: "Dra. Marena <em>Linero</em>", lead: t.tag })}
 <section class="section">
   <div class="container split split--top">
-    <div class="sticky-media"><figure class="frame frame--arch rv"><div class="media media--arch rv-img"><img src="${A}img/ig/doctora.jpg" alt="${esc(t.photoAlt)}" width="720" height="900" fetchpriority="high"><figcaption><span>Dra. Marena Linero Q.</span><a href="${CFG.instagram}" target="_blank" rel="noopener">@dra.marena</a></figcaption></div></figure></div>
+    <div class="sticky-media"><figure class="frame frame--arch rv"><div data-parallax class="media media--arch rv-img"><img src="${A}img/ig/doctora.jpg" alt="${esc(t.photoAlt)}" width="720" height="900" fetchpriority="high"><figcaption><span>Dra. Marena Linero Q.</span><a href="${CFG.instagram}" target="_blank" rel="noopener">@dra.marena</a></figcaption></div></figure></div>
     <div>
       <ul class="creds rv" style="margin-top:0">${t.cred.map(c => `<li>${I.check}${esc(c)}</li>`).join("")}</ul>
       <p class="lead rv" style="margin-top:28px;color:var(--ink)">${esc(t["doctor.lead"])}</p>
@@ -550,7 +559,7 @@ ${phero(t, href, { crumbs: cr, eyebrow: t.featured, h: t.techH, lead: t.tag, sid
       <p class="lead rv">${esc(t.hd2)}</p>
       <div class="ctas rv" style="margin-top:32px"><a class="btn" href="${wa(t["wa.default"] + " — Técnica Linero HD")}" target="_blank" rel="noopener">${I.wa}${esc(t.askWa)}</a><a class="btn btn--ghost" href="${href(url(L, "procs", pslug(L, bbl)))}">${esc(bbl[L][0])}</a></div>
     </div>
-    <figure class="frame rv"><div class="media rv-img"><img src="${A}img/ig/caso-2.jpg" alt="${esc(t.alt)} 2" width="640" height="800" loading="lazy"></div></figure>
+    <figure class="frame rv"><div data-parallax class="media rv-img"><img src="${A}img/ig/caso-2.jpg" alt="${esc(t.alt)} 2" width="640" height="800" loading="lazy"></div></figure>
   </div>
 </section>
 <section class="section white">
@@ -636,8 +645,23 @@ ${ctaBand(t, wa0, href, L)}` });
   /* TURISMO MÉDICO */
   add("turismo", L, null, () => {
     const t = T(L), cur = url(L, "turismo"), cr = [[t.nav.home, url(L, "home")], [t.nav.turismo, cur]];
-    return layout({ L, cur, key: "turismo", title: t.meta.turismo[0], desc: t.meta.turismo[1], alts: alts("turismo"), crumbs: cr, body: ({ href, wa0 }) => `
-${phero(t, href, { crumbs: cr, eyebrow: t["tour.eyebrow"], h: `${esc(t["tour.title1"])} <em>${esc(t["tour.title2"])}</em>`, lead: t["tour.lead"] })}
+    return layout({ L, cur, key: "turismo", title: t.meta.turismo[0], desc: t.meta.turismo[1], alts: alts("turismo"), crumbs: cr, body: ({ href, A, wa0 }) => `
+<section class="vhero dark">
+  <div class="vhero__media">${vid(A, "barranquilla-aerea", "Barranquilla", true)}</div>
+  <div class="container">
+    <ol class="crumbs" aria-label="Breadcrumb">${cr.map(([n, u], i) => i < cr.length - 1 ? `<li><a href="${href(u)}">${esc(n)}</a></li>` : `<li aria-current="page">${esc(n)}</li>`).join("")}</ol>
+    <p class="eyebrow">${esc(t["tour.eyebrow"])}</p>
+    <h1>${esc(t["tour.title1"])} <em>${esc(t["tour.title2"])}</em></h1>
+    <p class="lead">${esc(t["tour.lead"])}</p>
+    <div class="ctas"><a class="btn btn--gold" href="#planificador">${esc(t.planTrip)}</a><a class="btn btn--ghost" href="${wa0}" target="_blank" rel="noopener">${I.wa}${esc(t["cta.whatsapp"])}</a></div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
+</section>
+<section class="stack dark" aria-labelledby="bq-title">
+  <div class="container stack__intro"><p class="eyebrow rv">Barranquilla · Colombia</p><h2 class="h2 rv" id="bq-title">${t.bqH}</h2><p class="lead rv" style="margin-top:24px">${esc(t.bqLead)}</p></div>
+  ${PLACES.map((pl, i) => `<article class="panel"><div class="panel__media">${vid(A, pl.v, pl[L][0])}</div><div class="container panel__text"><span class="panel__n">0${i + 1}</span><p class="panel__place">${I.pin}${esc(pl[L][1])}</p><h3>${esc(pl[L][0])}</h3><p>${esc(pl[L][2])}</p></div></article>`).join("")}
+  <div class="container"><p class="credits">${t.credits}</p></div>
+</section>
 <section class="dark" style="padding-top:clamp(64px,8vw,110px)">
   <div class="hs">
     <div class="hs__sticky">
